@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Health & Diet Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Background Elements -->
+    <div class="bg-animation">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="floating-shape shape-4"></div>
+        <div class="floating-shape shape-5"></div>
+        <div class="particle-container" id="particles"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-outline" id="cursorOutline"></div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="sun-icon">☀️</span>
+        <span class="moon-icon">🌙</span>
+    </button>
+
+    <!-- Section 1: Home -->
+    <section class="section active" id="home">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <span class="brand-icon">🥗</span>
+                <h1>Diet Planner</h1>
+            </div>
+            <button class="cta-button" onclick="navigateToSection('auth-choice')">Get Started</button>
+        </nav>
+
+        <div class="hero">
+            <div class="hero-content">
+                <h2 class="hero-title">Transform Your Health Journey</h2>
+                <p class="hero-subtitle">Personalized diet plans, exercise routines, and wellness tracking tailored just for you</p>
+                <button class="hero-button" onclick="navigateToSection('auth-choice')">Start Your Journey</button>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80" alt="Healthy food">
+            </div>
+        </div>
+
+        <div class="features">
+            <h3 class="section-title">Why Choose Us</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🥗</div>
+                    <h4>Custom Diet Plans</h4>
+                    <p>Personalized meal plans based on your health conditions and goals</p>
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80" alt="Healthy salad">
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💪</div>
+                    <h4>Exercise Routines</h4>
+                    <p>Tailored workout plans that match your fitness level and objectives</p>
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&q=80" alt="Exercise">
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💧</div>
+                    <h4>Hydration Tracking</h4>
+                    <p>Smart water intake recommendations for optimal health</p>
+                    <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=400&q=80" alt="Water">
+                </div>
+            </div>
+        </div>
+
+        <div class="about">
+            <h3 class="section-title">About Us</h3>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>We are dedicated to helping you achieve your health goals through science-backed nutrition and personalized wellness plans. Our platform combines advanced health analytics with user-friendly design to make healthy living accessible to everyone.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h4>10,000+</h4>
+                            <p>Happy Users</p>
+                        </div>
+                        <div class="stat">
+                            <h4>50,000+</h4>
+                            <p>Diet Plans Created</p>
+                        </div>
+                        <div class="stat">
+                            <h4>98%</h4>
+                            <p>Success Rate</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=600&q=80" alt="Healthy lifestyle">
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="brand-icon">🥗</span>
+                    <h3>Diet Planner</h3>
+                    <p>Your partner in wellness</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Connect With Us</h4>
+                    <a href="mailto:contact@dietplanner.com">📧 contact@dietplanner.com</a>
+                    <a href="https://instagram.com" target="_blank">📷 Instagram</a>
+                    <a href="https://tiktok.com" target="_blank">🎵 TikTok</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Diet Planner. All rights reserved.</p>
+            </div>
+        </footer>
+    </section>
+
+    <!-- Section 2: Authentication Choice -->
+    <section class="section" id="auth-choice">
+        <div class="auth-container">
+            <button class="back-button" onclick="navigateToSection('home')">← Back</button>
+            <h2 class="auth-title">Welcome to Diet Planner</h2>
+            <p class="auth-subtitle">Choose how you'd like to continue</p>
+            <div class="auth-options">
+                <div class="auth-card" onclick="navigateToSection('signup')">
+                    <div class="auth-icon">✨</div>
+                    <h3>Create Account</h3>
+                    <p>Start your personalized health journey with full access</p>
+                    <img src="https://images.unsplash.com/photo-1559523161-0fc0d8b38a7a?w=400&q=80" alt="New user">
+                </div>
+                <div class="auth-card" onclick="navigateToSection('login')">
+                    <div class="auth-icon">🔐</div>
+                    <h3>Login</h3>
+                    <p>Welcome back! Access your saved plans and progress</p>
+                    <img src="https://images.unsplash.com/photo-1516534775068-ba3e7458af70?w=400&q=80" alt="Login">
+                </div>
+                <div class="auth-card" onclick="navigateToSection('health-info')">
+                    <div class="auth-icon">👤</div>
+                    <h3>Continue as Guest</h3>
+                    <p>Try our service without creating an account</p>
+                    <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&q=80" alt="Guest">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Signup -->
+    <section class="section" id="signup" style="display: none;">
+        <div class="signup-login-image-container">
+        <div class="form-container">
+            <button class="back-button" onclick="navigateToSection('auth-choice')">← Back</button>
+            <div class="form-header">
+                <h2>Create Your Account</h2>
+                <p>Start your personalized health journey today</p>
+            </div>
+            <form id="signupForm" method="POST" action="app.php">
+                <input type="hidden" name="action" value="signup">
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" name="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email Address</label>
+                    <input type="email" id="signup-email" name="email" required placeholder="your.email@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" name="password" required placeholder="Create a strong password">
+                </div>
+                <button type="submit" class="form-button">Create Account</button>
+            </form>
+            <div class="form-footer">
+                <p>Already have an account? <a href="#" onclick="navigateToSection('login')">Login here</a></p>
+            </div>
+        </div>
+        <div class="form-image">
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80" alt="Healthy lifestyle">
+        </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Login -->
+    <section class="section" id="login" style="display: none;">
+        <div class="signup-login-image-container">
+        <div class="form-container">
+            <button class="back-button" onclick="navigateToSection('auth-choice')">← Back</button>
+            <div class="form-header">
+                <h2>Welcome Back</h2>
+                <p>Login to continue your health journey</p>
+            </div>
+            <form id="loginForm" method="POST" action="app.php">
+                <input type="hidden" name="action" value="login">
+                <div class="form-group">
+                    <label for="login-email">Email Address</label>
+                    <input type="email" id="login-email" name="email" required placeholder="your.email@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" name="password" required placeholder="Enter your password">
+                </div>
+                <button type="submit" class="form-button">Login</button>
+            </form>
+            <div class="form-footer">
+                <p>Don't have an account? <a href="#" onclick="navigateToSection('signup')">Sign up here</a></p>
+            </div>
+        </div>
+        <div class="form-image">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80" alt="Wellness">
+        </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Health Information -->
+    <section class="section" id="health-info">
+        <div class="health-container">
+            <button class="back-button" onclick="navigateToSection('auth-choice')">← Back</button>
+            <h2 class="health-title">Tell Us About Yourself</h2>
+            <p class="health-subtitle">Help us create the perfect plan for you</p>
+            <form id="healthForm" method="POST" action="app.php">
+                <input type="hidden" name="action" value="save-health">
+                <div class="health-grid">
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age" required min="10" max="120" placeholder="25">
+                    </div>
+                    <div class="form-group">
+                        <label for="weight">Weight (kg)</label>
+                        <input type="number" id="weight" name="weight" required min="20" max="300" step="0.1" placeholder="70">
+                    </div>
+                    <div class="form-group">
+                        <label for="height">Height (cm)</label>
+                        <input type="number" id="height" name="height" required min="100" max="250" placeholder="170">
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender" required>
+                            <option value="">Select gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="disease">Health Condition</label>
+                    <select id="disease" name="disease" required>
+                        <option value="">Select your health condition</option>
+                        <option value="none">No Disease</option>
+                        <option value="diabetes">Diabetes</option>
+                        <option value="blood-pressure">Blood Pressure</option>
+                        <option value="heart-disease">Heart Disease</option>
+                        <option value="obesity">Obesity</option>
+                        <option value="thyroid">Thyroid</option>
+                    </select>
+                </div>
+                <button type="submit" class="form-button">Generate My Plan</button>
+            </form>
+        </div>
+        <div class="health-images">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80" alt="Health tracking">
+            <img src="https://images.unsplash.com/photo-1504439904031-93ded9f93e4e?w=400&q=80" alt="Fruits">
+        </div>
+    </section>
+
+    <!-- Section 6: Dashboard -->
+    <section class="section" id="dashboard">
+        <div class="dashboard-nav">
+            <div class="dashboard-brand">
+                <span class="brand-icon">🥗</span>
+                <h2>Diet planner</h2>
+            </div>
+            <div class="user-info" id="userInfo">
+                <span id="userName">Guest User</span>
+                <button class="logout-button" onclick="logout()">Logout</button>
+            </div>
+        </div>
+
+        <div class="dashboard-content">
+            <div class="dashboard-header">
+                <h2>Your Personalized Health Plan</h2>
+                <div class="health-summary" id="healthSummary"></div>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Diet Plan Card -->
+                <div class="dashboard-card diet-card">
+                    <h3>📅 7-Day Diet Plan</h3>
+                    <div class="diet-plan" id="dietPlan"></div>
+                </div>
+
+                <!-- Exercise Card -->
+                <div class="dashboard-card exercise-card">
+                    <h3>💪 Exercise Routine</h3>
+                    <div class="exercise-plan" id="exercisePlan"></div>
+                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&q=80" alt="Exercise">
+                </div>
+
+                <!-- Water Intake Card -->
+                <div class="dashboard-card water-card">
+                    <h3>💧 Daily Water Intake</h3>
+                    <div class="water-plan" id="waterPlan"></div>
+                    <img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?w=400&q=80" alt="Water">
+                </div>
+
+                <!-- Tips Card -->
+                <div class="dashboard-card tips-card">
+                    <h3>💡 Health Tips</h3>
+                    <div class="tips-content" id="healthTips"></div>
+                    <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=400&q=80" alt="Health tips">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p>Generating your personalized plan...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
